@@ -1,0 +1,55 @@
+.nav-item {
+    font-family: 'MontSerrat', 'sans-serif';
+    font-size: small;
+    cursor: pointer;
+}
+
+.current-nav-item {
+    border-bottom: 2px solid #008000;
+}
+
+.btn-green {
+    background: #008000;
+    font-family: 'MontSerrat', 'sans-serif';
+    cursor: pointer;
+    color: white;
+    font-size: small;
+}
+
+.btn-green:hover {
+    background: #006000;
+    color: white;
+}
+
+.navbar {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.hero {
+    background-image: url('../assets/hero.png');
+    height: 55%;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.hero-text {
+    color: white;
+    font-size: 60px;
+    font-family: 'aakar';
+    position: absolute;
+    bottom: 20;
+    left: 48;
+    text-shadow: -2px 2px black;
+}
+
+.hero-text p {
+    margin: 0;
+}
+
+.homepage-grid-item {
+    height: 100px;
+}
