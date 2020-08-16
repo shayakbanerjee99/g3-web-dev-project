@@ -14,6 +14,7 @@
     cursor: pointer;
     color: white;
     font-size: small;
+    border-radius: 10px;
 }
 
 .btn-green:hover {
@@ -51,12 +52,20 @@
 }
 
 .homepage-grid-item {
-    height: 100px;
+    height: 130px;
 }
 
 .ico-button-text {
     display: inline-block;
     vertical-align: middle;
+    text-align: left;
+    font-size: 15px;
     margin-bottom: 0;
     margin-left: 15px;
+}
+
+.btn-ico {
+    display: inline-block;
+    height: 40;
+    width: auto;
 }
