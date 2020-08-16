@@ -53,3 +53,10 @@
 .homepage-grid-item {
     height: 100px;
 }
+
+.ico-button-text {
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 0;
+    margin-left: 15px;
+}
