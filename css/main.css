@@ -77,3 +77,31 @@
     height: 40;
     width: auto;
 }
+
+#footer {
+    background: #2f3d2b;
+    margin-top: 50px;
+    padding: 50px;
+    color: white;
+    font-family: 'MontSerrat';
+}
+
+#footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.social {
+    width: 70px;
+    height: 70px;
+    border-radius: 35px;
+    background: #3f523a;
+    margin-right: 20px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+
+.social:hover {
+    background: #50684a;
+}
