@@ -14,6 +14,26 @@
 </head>
 
 <body>
+
+    <div id="adminLogin">
+        <div class="admin-login-content">
+            <a class="cross-button" onclick="closeForm()">X</a>
+            <img src="assets/g9_logo.svg" />
+            <h5 style="font-family:'Montserrat'; margin-top: 20px">ADMIN LOGIN</h5>
+            <form>
+                <div class="admin-login-form-element">
+                    <p>USERNAME</p>
+                    <input type="text" />
+                </div>
+                <div class="admin-login-form-element">
+                    <p>PASSWORD</p>
+                    <input type="password" />
+                </div>
+                <button type="submit" class="btn btn-green" style="margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">LOGIN</button>
+            </form>
+        </div>
+    </div>
+
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img src="assets/g9_logo.svg" /></a>
@@ -38,7 +58,7 @@
                 </ul>
             </div>
 
-            <a href="#" class="btn btn-green btn-sm mr-1 ml-5">ADMIN LOGIN</a>
+            <button class="btn btn-green btn-sm mr-1 ml-5" onclick="openForm()">ADMIN LOGIN</button>
         </nav>
     </div>
 
@@ -86,6 +106,17 @@
             <div class="social"></div>
         </div>
     </div>
+
+
+    <script>
+        function openForm() {
+            document.getElementById('adminLogin').style.display = 'block';
+        };
+
+        function closeForm() {
+            document.getElementById('adminLogin').style.display = 'none';
+        };
+    </script>
 
 </body>
 
