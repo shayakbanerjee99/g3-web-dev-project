@@ -163,3 +163,11 @@ input {
     margin-bottom: 70px;
     text-align: center;
 }
+
+.form-control {
+    width: 200px;
+}
+
+.add-book-form-element {
+    padding: 20px;
+}
