@@ -148,7 +148,8 @@ input {
     cursor: pointer;
 }
 
-#admin-container {
+#admin-container,
+#book-collection-container {
     background-color: #e8ffe8;
     min-height: 30vw;
     min-width: 100%;
@@ -157,7 +158,8 @@ input {
     border-top: 2px solid #2f3d2b23;
 }
 
-#admin-panel-heading {
+#admin-panel-heading,
+#book-collection-heading {
     color: #008000;
     font-family: 'Montserrat';
     margin-bottom: 70px;

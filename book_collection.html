@@ -1,0 +1,274 @@
+<html>
+
+<head>
+    <title>Book Collection</title>
+
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"><img src="assets/g9_logo.svg" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link current-nav-item" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">MEMBERSHIP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">ARCHIVE</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-green btn-sm mr-1 ml-5">LOGOUT</button>
+        </nav>
+    </div>
+
+    <div id="book-collection-container">
+        <h2 id="book-collection-heading">BOOK COLLECTION</h2>
+
+        <!-- TODO: Replace dummy data with values from the database -->
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Genre</th>
+                    <th scope="col">Publishing Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>EDU2</td>
+                    <td>General Chemistry</td>
+                    <td>ML Sinha</td>
+                    <td>Education</td>
+                    <td>1998</td>
+                </tr>
+                <tr>
+                    <td>EDU3</td>
+                    <td>Digest Reader</td>
+                    <td>AB Sinha</td>
+                    <td>Education</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>EDU4</td>
+                    <td>History Beyond</td>
+                    <td>S Gupta</td>
+                    <td>Education</td>
+                    <td>1999</td>
+                </tr>
+                <tr>
+                    <td>EDU5</td>
+                    <td>Green Nature</td>
+                    <td>P Saha</td>
+                    <td>Education</td>
+                    <td>1995</td>
+                </tr>
+                <tr>
+                    <td>FIC6</td>
+                    <td>Harry Potter</td>
+                    <td>JK Rowling</td>
+                    <td>Teen Fiction</td>
+                    <td>2001</td>
+                </tr>
+                <tr>
+                    <td>FIC7</td>
+                    <td>Artemis Fowl</td>
+                    <td>Edwin R</td>
+                    <td>Teen Fiction</td>
+                    <td>2000</td>
+                </tr>
+                <tr>
+                    <td>FIC8</td>
+                    <td>Percy Jackson</td>
+                    <td>Aldrin Ed</td>
+                    <td>Teen Fiction</td>
+                    <td>1997</td>
+                </tr>
+                <tr>
+                    <td>CRM9</td>
+                    <td>The God Father</td>
+                    <td>Mario Puzo</td>
+                    <td>Crime</td>
+                    <td>2001</td>
+                </tr>
+                <tr>
+                    <td>CRM10</td>
+                    <td>The girl on the Train</td>
+                    <td>Paula Hawkins</td>
+                    <td>Crime</td>
+                    <td>2003</td>
+                </tr>
+                <tr>
+                    <td>CRM11</td>
+                    <td>Sharp Object</td>
+                    <td>Gilliyan Flynn</td>
+                    <td>Crime</td>
+                    <td>2009</td>
+                </tr>
+                <tr>
+                    <td>CRM12</td>
+                    <td>Red Dragon</td>
+                    <td>Thomas Harris</td>
+                    <td>Crime</td>
+                    <td>2010</td>
+                </tr>
+                <tr>
+                    <td>CRM13</td>
+                    <td>Killing Floor</td>
+                    <td>Lee Child</td>
+                    <td>Crime</td>
+                    <td>1998</td>
+                </tr>
+                <tr>
+                    <td>HOR14</td>
+                    <td>Misery</td>
+                    <td>Stephen King</td>
+                    <td>Horror</td>
+                    <td>2006</td>
+                </tr>
+                <tr>
+                    <td>HOR15</td>
+                    <td>Dracula</td>
+                    <td>Bram Stoker</td>
+                    <td>Horror</td>
+                    <td>2010</td>
+                </tr>
+                <tr>
+                    <td>HOR16</td>
+                    <td>The Shining</td>
+                    <td>Stephen King</td>
+                    <td>Horror</td>
+                    <td>2015</td>
+                </tr>
+                <tr>
+                    <td>HOR17</td>
+                    <td>Carrie</td>
+                    <td>Stephen King</td>
+                    <td>Horror</td>
+                    <td>2002</td>
+                </tr>
+                <tr>
+                    <td>HOR18</td>
+                    <td>Pet Semetary</td>
+                    <td>Stephen King</td>
+                    <td>Horror</td>
+                    <td>1989</td>
+                </tr>
+                <tr>
+                    <td>HOR19</td>
+                    <td>Something Wicked</td>
+                    <td>Shirley S</td>
+                    <td>Horror</td>
+                    <td>2001</td>
+                </tr>
+                <tr>
+                    <td>HOR20</td>
+                    <td>Rosemary Baby</td>
+                    <td>Ira Heva</td>
+                    <td>Horror</td>
+                    <td>2005</td>
+                </tr>
+                <tr>
+                    <td>HOR21</td>
+                    <td>Heart Shaped Box</td>
+                    <td>Bram Stoker</td>
+                    <td>Horror</td>
+                    <td>2012</td>
+                </tr>
+                <tr>
+                    <td>HOR22</td>
+                    <td>Ghost Story</td>
+                    <td>S Haley</td>
+                    <td>Horror</td>
+                    <td>2003</td>
+                </tr>
+                <tr>
+                    <td>HOR23</td>
+                    <td>Exorcism</td>
+                    <td>Mary M</td>
+                    <td>Horror</td>
+                    <td>2001</td>
+                </tr>
+                <tr>
+                    <td>SCF24</td>
+                    <td>War of World</td>
+                    <td>HG Wells</td>
+                    <td>Sci-Fi</td>
+                    <td>2001</td>
+                </tr>
+                <tr>
+                    <td>SCF25</td>
+                    <td>Frankestein</td>
+                    <td>Mary Shell</td>
+                    <td>Sci-Fi</td>
+                    <td>2011</td>
+                </tr>
+                <tr>
+                    <td>SCF26</td>
+                    <td>Enders Game</td>
+                    <td>Oson Scott</td>
+                    <td>Sci-Fi</td>
+                    <td>2007</td>
+                </tr>
+                <tr>
+                    <td>SCF27</td>
+                    <td>Martian</td>
+                    <td>William Peter</td>
+                    <td>Sci-Fi</td>
+                    <td>2006</td>
+                </tr>
+                <tr>
+                    <td>SCF28</td>
+                    <td>Clock work</td>
+                    <td>Anthony</td>
+                    <td>Sci-Fi</td>
+                    <td>1999</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+
+    <div id="footer" class="row ">
+        <div class="col-3 ">
+            <h5>CONTACT US AT</h5>
+            <p><b>Email: </b>info@g3library.com</p>
+            <p><b>Phone: </b>0141-8281933</p>
+            <p><b>Address: </b>32, Potheri, Kancheepuram</p>
+            <p>Tamil Nadu - 603203</p>
+        </div>
+        <div class="col-7 offset-1 ">
+            <h5>SOCIAL</h5>
+            <div class="social "></div>
+            <div class="social "></div>
+            <div class="social "></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
