@@ -37,6 +37,12 @@ INSERT INTO books VALUES('SCF26','Enders Game','Oson Scott','Sci-Fi','2007-9-8')
 INSERT INTO books VALUES('SCF27','Martian','William Peter','Sci-Fi','2006-2-15');
 INSERT INTO books VALUES('SCF28','Clock work','Anthony','Sci-Fi','1999-2-26');
 
+/* Adding the issued books column with the default value of false or 0 */
+ALTER TABLE books
+ADD issued BOOLEAN
+NOT NULL
+DEFAULT false;
+
 
 /* Students table schema*/
 CREATE TABLE students(
