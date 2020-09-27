@@ -1,4 +1,4 @@
-/* Books table schema*/
+/* Books schema*/
 CREATE TABLE books(
     id VARCHAR(8) PRIMARY KEY,
     title VARCHAR(32) NOT NULL,
@@ -44,7 +44,7 @@ NOT NULL
 DEFAULT false;
 
 
-/* Students table schema*/
+/* Students schema*/
 CREATE TABLE students(
     id INT(5) PRIMARY KEY, 
     student_name VARCHAR(32) NOT NULL, 
@@ -84,3 +84,18 @@ INSERT INTO students VALUES(127,'Sachi','rashi@hotmail.com',9830645897);
 INSERT INTO students VALUES(128,'Vishal','agrim@hotmail.com',8767123456);
 INSERT INTO students VALUES(129,'lalita','lalita@hotmail.com',6045672346);
 INSERT INTO students VALUES(130,'siddhart','siddhart@gmail.com',7867834234);
+
+/* Updated on 28/08/2020 1:53:30*/
+/* Admin schema */
+CREATE TABLE admins(
+    id INT(2) PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(32),
+    password VARCHAR(12),
+    sessionToken VARCHAR(32)
+);
+
+/* Admin table data */
+INSERT INTO admins(username, password, sessionToken)
+VALUES ('tinagupta9981', 'password', 'a8hvn38fn1'),
+('debanjanac8173', 'password', '83gv2nh1j'),
+('shayak2768', 'password', 'vnajr92ak');
