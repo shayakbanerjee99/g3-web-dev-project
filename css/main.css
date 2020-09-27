@@ -80,7 +80,6 @@
 
 #footer {
     background: #2f3d2b;
-    margin-top: 50px;
     padding: 50px;
     color: white;
     font-family: 'MontSerrat';
@@ -147,4 +146,20 @@ input {
     margin-right: 20px;
     display: block;
     cursor: pointer;
+}
+
+#admin-container {
+    background-color: #e8ffe8;
+    min-height: 30vw;
+    min-width: 100%;
+    padding: 50px;
+    text-align: center;
+    border-top: 2px solid #2f3d2b23;
+}
+
+#admin-panel-heading {
+    color: #008000;
+    font-family: 'Montserrat';
+    margin-bottom: 70px;
+    text-align: center;
 }
