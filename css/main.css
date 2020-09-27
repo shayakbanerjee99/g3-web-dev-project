@@ -169,6 +169,7 @@ input {
 }
 
 .add-book-form-element,
-.issue-book-form-element {
+.issue-book-form-element,
+return-book-form-element {
     padding: 20px;
 }

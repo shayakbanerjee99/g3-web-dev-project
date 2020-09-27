@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Return Book</title>
+
+    <!-- Bootstrap Files -->
+    <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <script src="bootstrap-4.3.1-dist/js/bootstrap.min.js"></script>
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css" />
+
+</head>
+
+<body>
+
+    <div class="header">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="index.html"><img src="assets/g9_logo.svg" /></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link current-nav-item" href="index.html">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">ABOUT US</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">MEMBERSHIP</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link">ARCHIVE</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="btn btn-green btn-sm mr-1 ml-5">LOGOUT</button>
+        </nav>
+    </div>
+
+    <div id="admin-container">
+        <h2 id="admin-panel-heading">UPDATE RETURN</h2>
+
+        <!-- TODO: fill action -->
+        <form method="POST" action="">
+            <div class="row">
+                <div class="form-group return-book-form-element col-12">
+                    <label for="bookID ">Book ID</label>
+                    <input type="text" class="form-control m-auto" id="bookID " placeholder="Enter book ID ">
+                </div>
+            </div>
+            <button type="submit " class="btn btn-green " style="margin-top: 50px; padding:10 20 10 20; font-size: 14px; ">SUBMIT</button>
+
+        </form>
+
+    </div>
+
+
+    <div id="footer" class="row ">
+        <div class="col-3 ">
+            <h5>CONTACT US AT</h5>
+            <p><b>Email: </b>info@g3library.com</p>
+            <p><b>Phone: </b>0141-8281933</p>
+            <p><b>Address: </b>32, Potheri, Kancheepuram</p>
+            <p>Tamil Nadu - 603203</p>
+        </div>
+        <div class="col-7 offset-1 ">
+            <h5>SOCIAL</h5>
+            <div class="social "></div>
+            <div class="social "></div>
+            <div class="social "></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
