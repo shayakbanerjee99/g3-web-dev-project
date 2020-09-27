@@ -168,6 +168,7 @@ input {
     width: 200px;
 }
 
-.add-book-form-element {
+.add-book-form-element,
+.issue-book-form-element {
     padding: 20px;
 }
