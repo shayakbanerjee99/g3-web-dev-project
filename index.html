@@ -34,6 +34,18 @@
         </div>
     </div>
 
+
+    <div id="issuedBookFormContent">
+        <div id="issuedBookForm">
+            <a class="cross-button" onclick="closeIssuedBooksForm()">X</a>
+            <div class="form-group" style="margin-top: 40px;">
+                <input type="text" class="form-control m-auto" id="indexStudentIDTextField" placeholder="Enter student ID">
+                <button type="submit" class="btn btn-green" style="margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">GET DETAILS</button>
+            </div>
+        </div>
+    </div>
+
+
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img src="assets/g9_logo.svg" /></a>
@@ -78,12 +90,12 @@
                         <p class="ico-button-text">VIEW BOOK<br>COLLECTION</p>
                     </div>
                 </a>
-                <a href="#" class="btn btn-green" style="position: relative; margin-left:20px">
+                <btn id="booksIssuedButton" onclick="openIssuedBooksForm()" class="btn btn-green" style="position: relative; margin-left:20px">
                     <div style="padding:10px">
                         <img src="assets/id_icon.svg" class="btn-ico">
                         <p class="ico-button-text">BOOKS YOU'VE<br>ISSUED</p>
                     </div>
-                </a>
+                </btn>
             </div>
         </div>
         <div class="col-5 offset-1 homepage-grid-item">
@@ -115,6 +127,14 @@
 
         function closeForm() {
             document.getElementById('adminLogin').style.display = 'none';
+        };
+
+        function openIssuedBooksForm() {
+            document.getElementById('issuedBookFormContent').style.display = 'block';
+        };
+
+        function closeIssuedBooksForm() {
+            document.getElementById('issuedBookFormContent').style.display = 'none';
         };
     </script>
 
