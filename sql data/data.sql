@@ -91,3 +91,14 @@ INSERT INTO admins(username, password, sessionToken)
 VALUES ('tinagupta9981', 'password', 'a8hvn38fn1'),
 ('debanjanac8173', 'password', '83gv2nh1j'),
 ('shayak2768', 'password', 'vnajr92ak');
+
+CREATE TABLE issue_log(
+    studentID INT,
+    bookID VARCHAR(8),
+    timestamp DATETIME NOT NULL,
+    adminID INT,
+    action VARCHAR(6) NOT NULL,
+    CONSTRAINT fk_studentID FOREIGN KEY (studentID) REFERENCES students(id),
+    CONSTRAINT fk_bookID FOREIGN KEY (bookID) REFERENCES books(id),
+    CONSTRAINT fk_adminID FOREIGN KEY (adminID) REFERENCES admins(id)
+);
