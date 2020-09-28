@@ -1,4 +1,3 @@
-/* Books schema*/
 CREATE TABLE books(
     id VARCHAR(8) PRIMARY KEY,
     title VARCHAR(32) NOT NULL,
@@ -7,7 +6,6 @@ CREATE TABLE books(
     publishing_date DATE
 );
 
-/* Books table data */
 INSERT INTO books VALUES('EDU1','Concise Physics','SL Arora','Education','1987-6-7');
 INSERT INTO books VALUES('EDU2','General Chemistry','ML Sinha','Education','1998-8-12');
 INSERT INTO books VALUES('EDU3','Digest Reader','AB Sinha','Education','1995-9-7');
@@ -37,14 +35,12 @@ INSERT INTO books VALUES('SCF26','Enders Game','Oson Scott','Sci-Fi','2007-9-8')
 INSERT INTO books VALUES('SCF27','Martian','William Peter','Sci-Fi','2006-2-15');
 INSERT INTO books VALUES('SCF28','Clock work','Anthony','Sci-Fi','1999-2-26');
 
-/* Adding the issued books column with the default value of false or 0 */
+/* Adding column that marks if the book is currently issued*/
 ALTER TABLE books
 ADD issued BOOLEAN
 NOT NULL
 DEFAULT false;
 
-
-/* Students schema*/
 CREATE TABLE students(
     id INT(5) PRIMARY KEY, 
     student_name VARCHAR(32) NOT NULL, 
@@ -52,7 +48,6 @@ CREATE TABLE students(
     phone VARCHAR(10)
 );
 
-/* Students table data*/
 INSERT INTO students VALUES(100,'Rahul','rahul26@gmail.com',9830456786);
 INSERT INTO students VALUES(101,'Sita','sita2@yahoo.com',8767899878);
 INSERT INTO students VALUES(102,'Asmita','asmita@gmail.com',9834567867);
@@ -85,8 +80,6 @@ INSERT INTO students VALUES(128,'Vishal','agrim@hotmail.com',8767123456);
 INSERT INTO students VALUES(129,'lalita','lalita@hotmail.com',6045672346);
 INSERT INTO students VALUES(130,'siddhart','siddhart@gmail.com',7867834234);
 
-/* Updated on 28/08/2020 1:53:30*/
-/* Admin schema */
 CREATE TABLE admins(
     id INT(2) PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(32),
@@ -94,7 +87,6 @@ CREATE TABLE admins(
     sessionToken VARCHAR(32)
 );
 
-/* Admin table data */
 INSERT INTO admins(username, password, sessionToken)
 VALUES ('tinagupta9981', 'password', 'a8hvn38fn1'),
 ('debanjanac8173', 'password', '83gv2nh1j'),
