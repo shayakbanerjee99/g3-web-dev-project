@@ -102,3 +102,10 @@ CREATE TABLE issue_log(
     CONSTRAINT fk_bookID FOREIGN KEY (bookID) REFERENCES books(id),
     CONSTRAINT fk_adminID FOREIGN KEY (adminID) REFERENCES admins(id)
 );
+
+INSERT INTO issue_log VALUES(127,"CRM10",'2020-05-12',1,"issue");
+INSERT INTO issue_log VALUES(104,"EDU3",'2020-10-19',2,"issue");
+INSERT INTO issue_log VALUES(110,"SCF25",'2019-02-02',3,"return");
+INSERT INTO issue_log VALUES(113,"HOR14",'2019-03-26',2,"return");
+INSERT INTO issue_log VALUES(121,"SCF24",'2020-08-16',3,"issue");
+INSERT INTO issue_log VALUES(119,"FIC7",'2020-01-26',1,"return");
