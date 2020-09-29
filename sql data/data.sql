@@ -112,27 +112,27 @@ INSERT INTO issue_log VALUES(119,"FIC7",'2020-01-26',1,"return");
 
 /* Use query SELECT * FROM issued_books; to view all the books currently issued with the studentID of the issuer*/
 CREATE VIEW issued_books AS(
-	SELECT bookID, studentID as issued_books FROM(
-		SELECT issue.bookID, issue.timestamp AS issue_time, rtrn.timestamp AS rtrn_time, studentID
-		FROM (
-			SELECT last_issues_wo_studentID.timestamp, last_issues_wo_studentID.bookID, studentID
-				FROM (
-					SELECT timestamp, bookID, studentID
-					FROM issue_log
-				) issues_w_studentID
-				JOIN (
-					SELECT MAX(timestamp) AS timestamp, bookID 
-					FROM issue_log 
-					WHERE action="issue" 
-					GROUP BY bookID
-				) last_issues_wo_studentID
-				ON last_issues_wo_studentID.timestamp = issues_w_studentID.timestamp
-		) issue
-		LEFT JOIN (
-			SELECT MAX(timestamp) AS timestamp, bookID from issue_log WHERE action="return" GROUP BY bookID
-		) rtrn
-		ON issue.bookID = rtrn.bookID
-	) issued_books
-	WHERE rtrn_time IS NULL
-	OR issue_time > rtrn_time
+    SELECT bookID, studentID as issued_books FROM(
+        SELECT issue.bookID, issue.timestamp AS issue_time, rtrn.timestamp AS rtrn_time, studentID
+        FROM (
+            SELECT last_issues_wo_studentID.timestamp, last_issues_wo_studentID.bookID, studentID
+                FROM (
+                    SELECT timestamp, bookID, studentID
+                    FROM issue_log
+                ) issues_w_studentID
+                JOIN (
+                    SELECT MAX(timestamp) AS timestamp, bookID 
+                    FROM issue_log 
+                    WHERE action="issue" 
+                    GROUP BY bookID
+                ) last_issues_wo_studentID
+                ON last_issues_wo_studentID.timestamp = issues_w_studentID.timestamp
+        ) issue
+        LEFT JOIN (
+            SELECT MAX(timestamp) AS timestamp, bookID from issue_log WHERE action="return" GROUP BY bookID
+        ) rtrn
+        ON issue.bookID = rtrn.bookID
+    ) issued_books
+    WHERE rtrn_time IS NULL
+    OR issue_time > rtrn_time
 );
