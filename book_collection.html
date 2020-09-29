@@ -11,10 +11,40 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css" />
 
+    <!-- Ajax  -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $.get("http://localhost/books.php", function(data) {
+                // console.log(data[1]);
+                // $(".text").html(data[1]['title']);
+
+                var tableData = "";
+
+                for(var i = 0; i < data.length; i++){
+                    tableData += "<tr><td>" + data[i]['id'] + "</td>";
+                    tableData += "<td>" + data[i]['title'] + "</td>";
+                    tableData += "<td>" + data[i]['author'] + "</td>";
+                    tableData += "<td>" + data[i]['genre'] + "</td>";
+                    tableData += "<td>" + data[i]['publishing_date'][0] + "</td>";
+                    if(data[i]['issued_status'] == '1')
+                        tableData += "<td style='font-weight:500; color: #333333'>Yes</td>";
+                    else
+                        tableData += "<td>No</td>";
+                    tableData += "</tr>";
+
+                }
+
+                $("tbody").html(tableData);
+
+            });
+        });
+    </script>
+
 </head>
 
 <body>
-
     <div class="header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html"><img src="assets/g9_logo.svg" /></a>
@@ -46,7 +76,6 @@
     <div id="book-collection-container">
         <h2 id="book-collection-heading">BOOK COLLECTION</h2>
 
-        <!-- TODO: Replace dummy data with values from the database -->
         <table class="table table-striped">
             <thead>
                 <tr>
@@ -54,202 +83,12 @@
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Genre</th>
-                    <th scope="col">Publishing Date</th>
+                    <th scope="col">Year of Publication</th>
+                    <th scope="col">Issued?</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>EDU2</td>
-                    <td>General Chemistry</td>
-                    <td>ML Sinha</td>
-                    <td>Education</td>
-                    <td>1998</td>
-                </tr>
-                <tr>
-                    <td>EDU3</td>
-                    <td>Digest Reader</td>
-                    <td>AB Sinha</td>
-                    <td>Education</td>
-                    <td>1995</td>
-                </tr>
-                <tr>
-                    <td>EDU4</td>
-                    <td>History Beyond</td>
-                    <td>S Gupta</td>
-                    <td>Education</td>
-                    <td>1999</td>
-                </tr>
-                <tr>
-                    <td>EDU5</td>
-                    <td>Green Nature</td>
-                    <td>P Saha</td>
-                    <td>Education</td>
-                    <td>1995</td>
-                </tr>
-                <tr>
-                    <td>FIC6</td>
-                    <td>Harry Potter</td>
-                    <td>JK Rowling</td>
-                    <td>Teen Fiction</td>
-                    <td>2001</td>
-                </tr>
-                <tr>
-                    <td>FIC7</td>
-                    <td>Artemis Fowl</td>
-                    <td>Edwin R</td>
-                    <td>Teen Fiction</td>
-                    <td>2000</td>
-                </tr>
-                <tr>
-                    <td>FIC8</td>
-                    <td>Percy Jackson</td>
-                    <td>Aldrin Ed</td>
-                    <td>Teen Fiction</td>
-                    <td>1997</td>
-                </tr>
-                <tr>
-                    <td>CRM9</td>
-                    <td>The God Father</td>
-                    <td>Mario Puzo</td>
-                    <td>Crime</td>
-                    <td>2001</td>
-                </tr>
-                <tr>
-                    <td>CRM10</td>
-                    <td>The girl on the Train</td>
-                    <td>Paula Hawkins</td>
-                    <td>Crime</td>
-                    <td>2003</td>
-                </tr>
-                <tr>
-                    <td>CRM11</td>
-                    <td>Sharp Object</td>
-                    <td>Gilliyan Flynn</td>
-                    <td>Crime</td>
-                    <td>2009</td>
-                </tr>
-                <tr>
-                    <td>CRM12</td>
-                    <td>Red Dragon</td>
-                    <td>Thomas Harris</td>
-                    <td>Crime</td>
-                    <td>2010</td>
-                </tr>
-                <tr>
-                    <td>CRM13</td>
-                    <td>Killing Floor</td>
-                    <td>Lee Child</td>
-                    <td>Crime</td>
-                    <td>1998</td>
-                </tr>
-                <tr>
-                    <td>HOR14</td>
-                    <td>Misery</td>
-                    <td>Stephen King</td>
-                    <td>Horror</td>
-                    <td>2006</td>
-                </tr>
-                <tr>
-                    <td>HOR15</td>
-                    <td>Dracula</td>
-                    <td>Bram Stoker</td>
-                    <td>Horror</td>
-                    <td>2010</td>
-                </tr>
-                <tr>
-                    <td>HOR16</td>
-                    <td>The Shining</td>
-                    <td>Stephen King</td>
-                    <td>Horror</td>
-                    <td>2015</td>
-                </tr>
-                <tr>
-                    <td>HOR17</td>
-                    <td>Carrie</td>
-                    <td>Stephen King</td>
-                    <td>Horror</td>
-                    <td>2002</td>
-                </tr>
-                <tr>
-                    <td>HOR18</td>
-                    <td>Pet Semetary</td>
-                    <td>Stephen King</td>
-                    <td>Horror</td>
-                    <td>1989</td>
-                </tr>
-                <tr>
-                    <td>HOR19</td>
-                    <td>Something Wicked</td>
-                    <td>Shirley S</td>
-                    <td>Horror</td>
-                    <td>2001</td>
-                </tr>
-                <tr>
-                    <td>HOR20</td>
-                    <td>Rosemary Baby</td>
-                    <td>Ira Heva</td>
-                    <td>Horror</td>
-                    <td>2005</td>
-                </tr>
-                <tr>
-                    <td>HOR21</td>
-                    <td>Heart Shaped Box</td>
-                    <td>Bram Stoker</td>
-                    <td>Horror</td>
-                    <td>2012</td>
-                </tr>
-                <tr>
-                    <td>HOR22</td>
-                    <td>Ghost Story</td>
-                    <td>S Haley</td>
-                    <td>Horror</td>
-                    <td>2003</td>
-                </tr>
-                <tr>
-                    <td>HOR23</td>
-                    <td>Exorcism</td>
-                    <td>Mary M</td>
-                    <td>Horror</td>
-                    <td>2001</td>
-                </tr>
-                <tr>
-                    <td>SCF24</td>
-                    <td>War of World</td>
-                    <td>HG Wells</td>
-                    <td>Sci-Fi</td>
-                    <td>2001</td>
-                </tr>
-                <tr>
-                    <td>SCF25</td>
-                    <td>Frankestein</td>
-                    <td>Mary Shell</td>
-                    <td>Sci-Fi</td>
-                    <td>2011</td>
-                </tr>
-                <tr>
-                    <td>SCF26</td>
-                    <td>Enders Game</td>
-                    <td>Oson Scott</td>
-                    <td>Sci-Fi</td>
-                    <td>2007</td>
-                </tr>
-                <tr>
-                    <td>SCF27</td>
-                    <td>Martian</td>
-                    <td>William Peter</td>
-                    <td>Sci-Fi</td>
-                    <td>2006</td>
-                </tr>
-                <tr>
-                    <td>SCF28</td>
-                    <td>Clock work</td>
-                    <td>Anthony</td>
-                    <td>Sci-Fi</td>
-                    <td>1999</td>
-                </tr>
-            </tbody>
+            <tbody></tbody>
         </table>
-
     </div>
 
 
