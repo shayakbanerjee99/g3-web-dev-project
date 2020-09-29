@@ -11,6 +11,33 @@
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css" />
 
+    <script type="text/javascript">
+
+        function fetchIssuedBooks(){
+            $.get("http://localhost/issued_books.php", function(data) {                
+
+                var studentID = document.getElementById("studentID").value;
+                var tableData = "";
+
+                for(var i = 0; i < data.length; i++){
+                    
+                    if(data[i]['studentID'] == studentID){
+                        tableData += "<tr><td>" + data[i]['bookID'] + "</td>";
+                        tableData += "<td>" + data[i]['title'] + "</td></tr>";
+                    }
+                }
+
+                if(tableData == ""){
+                    tableData = "<tr><td>" + studentID + "</td><td>None</td></tr>";
+                }
+
+                $('tbody').html(tableData);
+                document.getElementById("issuedBookForm").style.display = 'none';
+                document.getElementById('issuedBooksData').style.display = 'block';
+            });
+        }
+    </script>
+
 </head>
 
 <body>
@@ -39,9 +66,22 @@
         <div id="issuedBookForm">
             <a class="cross-button" onclick="closeIssuedBooksForm()">X</a>
             <div class="form-group" style="margin-top: 40px;">
-                <input type="text" class="form-control m-auto" id="indexStudentIDTextField" placeholder="Enter student ID">
-                <button type="submit" class="btn btn-green" style="margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">GET DETAILS</button>
-            </div>
+                <input type="text" class="form-control m-auto" id="studentID" placeholder="Enter student ID">
+                <button onclick="fetchIssuedBooks()" type="submit" class="btn btn-green" style="margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">GET DETAILS</button>
+            </div>            
+        </div>
+
+        <div id="issuedBooksData">
+            <a class="cross-button" onclick="closeIssuedBooksForm()">X</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Book ID</th>
+                        <th scope="col">Title</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
         </div>
     </div>
 
@@ -131,10 +171,13 @@
 
         function openIssuedBooksForm() {
             document.getElementById('issuedBookFormContent').style.display = 'block';
+            document.getElementById('issuedBooksData').style.display = 'none';
         };
 
         function closeIssuedBooksForm() {
             document.getElementById('issuedBookFormContent').style.display = 'none';
+            document.getElementById('issuedBooksData').style.display = 'none';
+            document.getElementById('issuedBookForm').style.display = 'block';
         };
     </script>
 
