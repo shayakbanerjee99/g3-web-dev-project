@@ -136,3 +136,6 @@ CREATE VIEW issued_books AS(
     WHERE rtrn_time IS NULL
     OR issue_time > rtrn_time
 );
+
+/* mark the issued books as issued in books table*/
+UPDATE books SET issued = 1 WHERE id IN (SELECT bookID FROM issued_books);
