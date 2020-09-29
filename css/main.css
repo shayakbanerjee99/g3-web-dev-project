@@ -170,6 +170,17 @@ input {
     text-align: center;
 }
 
+#issuedBooksData{
+    display: block;
+    margin: auto;
+    width: 400px;
+    justify-items: center;
+    background: #d9d9d9;
+    padding: 20 0 50 20;
+    border-radius: 10px;
+    text-align: center;
+}
+
 #admin-container,
 #book-collection-container {
     background-color: #e8ffe8;
