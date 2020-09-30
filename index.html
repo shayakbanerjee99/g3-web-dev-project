@@ -10,6 +10,8 @@
 
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/main.css" />
+    
+    <meta charset="UTF-8">
 
     <script type="text/javascript">
 
@@ -47,16 +49,16 @@
             <a class="cross-button" onclick="closeForm()">X</a>
             <img src="assets/g9_logo.svg" />
             <h5 style="font-family:'Montserrat'; margin-top: 20px">ADMIN LOGIN</h5>
-            <form>
+            <form accept-charset='utf-8' >
                 <div class="admin-login-form-element">
                     <p>USERNAME</p>
-                    <input type="text" />
+                    <input id="username" type="text" />
                 </div>
                 <div class="admin-login-form-element">
                     <p>PASSWORD</p>
-                    <input type="password" />
+                    <input id="password" type="password" />
                 </div>
-                <button type="submit" class="btn btn-green" style="margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">LOGIN</button>
+                <a onclick="authenticate()" class="btn btn-green" style="color: white; margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">LOGIN</a>
             </form>
         </div>
     </div>
@@ -179,6 +181,25 @@
             document.getElementById('issuedBooksData').style.display = 'none';
             document.getElementById('issuedBookForm').style.display = 'block';
         };
+        
+        function authenticate(){
+        	var username = document.getElementById("username").value;
+        	var password = document.getElementById("password").value;
+        	
+        	$.get("http://localhost/admin.php", function(data){
+        		for(var i = 0; i < data.length; i++){
+        			var user = data[i];
+        			
+        			if(user['username'] == username && user['password'] == password){
+        				var sessionURL = "http://localhost/g3-web-dev-project/admin_panel.html?token=" + user['sessionToken'];
+        				window.open(sessionURL);
+        				break;
+        			}
+        		}
+        	});
+        }
+        
+        
     </script>
 
 </body>
