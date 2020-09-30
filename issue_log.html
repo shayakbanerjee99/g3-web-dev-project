@@ -16,9 +16,7 @@
     
     <script type="text/javascript">
         $(document).ready(function() {
-            $.get("http://localhost/books.php", function(data) {
-                // console.log(data[1]);
-                // $(".text").html(data[1]['title']);
+            $.get("http://localhost/issue_log.php", function(data) {
 
                 var tableData = "";
 
@@ -72,19 +70,29 @@
             <button class="btn btn-green btn-sm mr-1 ml-5">LOGOUT</button>
         </nav>
     </div>
+    
+    CREATE TABLE issue_log(
+    studentID INT,
+    bookID VARCHAR(8),
+    timestamp DATETIME NOT NULL,
+    adminID INT,
+    action VARCHAR(6) NOT NULL,
+    CONSTRAINT fk_studentID FOREIGN KEY (studentID) REFERENCES students(id),
+    CONSTRAINT fk_bookID FOREIGN KEY (bookID) REFERENCES books(id),
+    CONSTRAINT fk_adminID FOREIGN KEY (adminID) REFERENCES admins(id)
+);
 
     <div id="book-collection-container">
-        <h2 id="book-collection-heading">BOOK COLLECTION</h2>
+        <h2 id="book-collection-heading">ISSUE LOG</h2>
 
         <table class="table table-striped">
             <thead>
                 <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Author</th>
-                    <th scope="col">Genre</th>
-                    <th scope="col">Year of Publication</th>
-                    <th scope="col">Issued?</th>
+                    <th scope="col">Student ID</th>
+                    <th scope="col">Book ID</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Admin ID</th>
+                    <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody></tbody>
