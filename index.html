@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="css/main.css" />
     
     <meta charset="UTF-8">
-
+   
     <script type="text/javascript">
+    	
+    	 history.pushState({type:'get'}, "page 2", "index.html?");
 
         function fetchIssuedBooks(){
             $.get("http://localhost/issued_books.php", function(data) {                
@@ -58,7 +60,7 @@
                     <p>PASSWORD</p>
                     <input id="password" type="password" />
                 </div>
-                <a onclick="authenticate()" class="btn btn-green" style="color: white; margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">LOGIN</a>
+                <btn onclick="authenticate()" class="btn btn-green" style="color: white; margin-top:30px; padding: 5 20 5 20; border-radius: 5px;">LOGIN</btn>
             </form>
         </div>
     </div>
