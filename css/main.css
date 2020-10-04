@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Suomi Slab Serif&display=swap');
 @font-face {
     font-family: 'aakar';
     src: url('../assets/fonts/aakar/aakar-medium-webfont.woff2') format('woff2'), url('../assets/fonts/aakar/aakar-medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'aleo';
+    src: url('../assets/fonts/aleo/aleo-bold-webfont.woff2') format('woff2'), url('../assets/fonts/aakar/aleo-bold-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
@@ -36,7 +43,7 @@
 }
 
 .hero {
-    background-image: url('../assets/hero.png');
+    background-image: url('../assets/hero1.png');
     height: 55%;
     width: 100%;
     background-position: center;
@@ -47,12 +54,11 @@
 
 .hero-text {
     color: white;
-    font-size: 60px;
-    font-family: 'aakar';
+    font-size: 50px;
+    font-family: 'aleo';
     position: absolute;
     bottom: 20;
     left: 48;
-    text-shadow: -2px 2px black;
 }
 
 .hero-text p {
