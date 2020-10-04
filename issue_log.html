@@ -1,7 +1,7 @@
 <html>
 
 <head>
-    <title>Book Collection</title>
+    <title>Issue Log</title>
 
     <!-- Bootstrap Files -->
     <link rel="stylesheet" href="bootstrap-4.3.1-dist/css/bootstrap.min.css" />
@@ -16,22 +16,34 @@
     
     <script type="text/javascript">
         $(document).ready(function() {
-            $.get("http://localhost/issue_log.php", function(data) {
 
-                var tableData = "";
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+    	    var token = urlParams.get('token');
+            var auth_url = "http://localhost/authenticate_token.php?token="+token;
 
-                for(var i = 0; i < data.length; i++){
-                    tableData += "<tr><td>" + data[i]['studentID'] + "</td>";
-                    tableData += "<td>" + data[i]['bookID'] + "</td>";
-                    tableData += "<td>" + data[i]['timestamp'] + "</td>";
-                    tableData += "<td>" + data[i]['adminID'] + "</td>";
-                    tableData += "<td>" + data[i]['action'] + "</td>";
-                    tableData += "</tr>";
+            $.get(auth_url, (data)=>{
+                if(data[0]['exists'] == 1){ // if user exists
+                    $.get("http://localhost/issue_log.php", function(data) {
 
+                        var tableData = "";
+
+                        for(var i = 0; i < data.length; i++){
+                            tableData += "<tr><td>" + data[i]['studentID'] + "</td>";
+                            tableData += "<td>" + data[i]['bookID'] + "</td>";
+                            tableData += "<td>" + data[i]['timestamp'] + "</td>";
+                            tableData += "<td>" + data[i]['adminID'] + "</td>";
+                            tableData += "<td>" + data[i]['action'] + "</td>";
+                            tableData += "</tr>";
+                        }
+
+                        $("tbody").html(tableData);
+
+                    });
+                } else {
+                    console.log('admin does not exist');
+                    $("#book-collection-heading").html("USER NOT FOUND");
                 }
-
-                $("tbody").html(tableData);
-
             });
         });
     </script>
@@ -100,7 +112,6 @@
             <div class="social "></div>
         </div>
     </div>
-
 </body>
 
 </html>
