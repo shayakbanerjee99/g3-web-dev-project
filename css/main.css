@@ -59,6 +59,7 @@
     position: absolute;
     bottom: 20;
     left: 48;
+    text-shadow: 2px 2px 2px #000000;
 }
 
 .hero-text p {
